@@ -4,6 +4,7 @@ const styles = {
   normalText: 'font-rajdhani font-normal text-[24px] text-siteWhite',
   footerText: 'font-rajdhani font-medium text-base text-white',
   infoText: 'font-rajdhani font-medium text-lg text-siteViolet cursor-pointer',
+  linkBlue: 'text-siteViolet',
 
   // glassmorphism
   glassEffect: 'bg-white backdrop-filter backdrop-blur-lg bg-opacity-10',
@@ -11,7 +12,7 @@ const styles = {
   // hoc page
   hocContainer: 'min-h-screen md:mx-auto flex xl:flex-row flex-col relative',
   hocContentBox: 'flex flex-1 justify-between bg-siteblack py-8 sm:px-12 px-8 flex-col',
-  hocLogo: 'w-[160px] h-[52px] object-contain cursor-pointer rounded-full',
+  hocLogo: 'w-[150px] h-[150px] object-contain cursor-pointer rounded-full',
   hocBodyWrapper: 'flex-1 flex justify-center flex-col xl:mt-0 my-16',
 
   // join battle page

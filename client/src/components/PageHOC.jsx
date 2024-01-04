@@ -30,7 +30,12 @@ const PageHOC = (Component, title, description) => () => {
           <p className={`${styles.normalText} my-10`}>{description}</p>
           <Component />
         </div>
-        <p className={styles.footerText}>Made by Knight</p>
+        <p className={styles.footerText}>
+      Copyright © 2024 All rights reserved{' '}
+      <a href="https://x.com/Giddy_KK?t=_oopVrOZu77tBxxwxy0-Tw&s=09" target="_blank" rel="noopener noreferrer" className={styles.linkBlue} >
+        @codewithgiddy🪐
+      </a>
+    </p>
       </div>
       <div className="flex flex-1">
         <img
