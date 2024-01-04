@@ -14,7 +14,7 @@ const Home = () => {
       const playerExists = await contract.isPlayer(walletAddress);
 
       if (!playerExists) {
-        await contract.registerPlayer(playerName, playerName, {gasLimit: 200000});
+        await contract.registerPlayer(playerName, playerName);
 
         setShowAlert({
           status: true,
@@ -39,7 +39,7 @@ const Home = () => {
       }
     };
     if (contract) checkForPlayerToken();
-  }, [contract, navigate, walletAddress, contract.isPlayer, contract.isPlayerToken]);
+  }, [contract]);
 
   useEffect(() => {
     if(gameData.activeBattle){

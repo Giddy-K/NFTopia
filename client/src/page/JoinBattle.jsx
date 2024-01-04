@@ -7,7 +7,7 @@ import styles from '../styles';
 
 const JoinBattle = () => {
   const navigate = useNavigate();
-  const { contract, gameData, setShowAlert, setBattleName, walletAddress } = useGlobalContext();
+  const { contract, gameData, setShowAlert, setBattleName, setErrorMessage, walletAddress } = useGlobalContext();
 
   useEffect(() => {
     if (gameData?.activeBattle?.battleStatus === 1) navigate(`/battle/${gameData.activeBattle.name}`);
@@ -17,11 +17,11 @@ const JoinBattle = () => {
     setBattleName(battleName);
 
     try {
-      await contract.joinBattle(battleName, {gasLimit: 200000});
+      await contract.joinBattle(battleName);
 
       setShowAlert({ status: true, type: 'success', message: `Joining ${battleName}` });
     } catch (error) {
-        setShowAlert({ status: true, type: 'failure', message: `Cannot Join ${battleName}!` });
+      setErrorMessage(error);
     }
   };
 
