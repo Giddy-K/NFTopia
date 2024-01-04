@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-import { CustomButton, CustomInput, PageHOC } from '../components';
-import { useGlobalContext } from '../context';
+import { CustomButton, CustomInput, PageHOC } from "../components";
+import { useGlobalContext } from "../context";
 
 const Home = () => {
   const { contract, walletAddress, setShowAlert } = useGlobalContext();
-  const [playerName, setPlayerName] = useState('');
+  const [playerName, setPlayerName] = useState("");
   const navigate = useNavigate();
 
   const handleClick = async () => {
@@ -18,7 +18,7 @@ const Home = () => {
 
         setShowAlert({
           status: true,
-          type: 'info',
+          type: "info",
           message: `${playerName} is being summoned!`,
         });
 
@@ -27,7 +27,7 @@ const Home = () => {
     } catch (error) {
       setShowAlert({
         status: true,
-        type: 'failure',
+        type: "failure",
         message: error.message,
       });
     }
@@ -36,27 +36,28 @@ const Home = () => {
   useEffect(() => {
     const checkForPlayerToken = async () => {
       const playerExists = await contract.isPlayer(walletAddress);
-      const playerTokenExists = await contract.isPlayerToken
-      (walletAddress);
+      const playerTokenExists = await contract.isPlayerToken(walletAddress);
+      console.log({ playerExists, playerTokenExists });
+      if (playerExists && playerTokenExists) {
+        navigate("/create-battle");
+      }
+    };
+    if (contract) checkForPlayerToken();
+  }, [contract, navigate, walletAddress, contract.isPlayer, contract.isPlayerToken]);
 
-      if(playerExists && playerTokenExists) navigate('/create-battle')
-    }
-  if (contract) checkForPlayerToken();
-  }, [contract]);
-  
   return (
     <div className="flex flex-col">
-     <CustomInput
-     label="Name"
-     placeHolder="Enter your player name"
-     value={playerName}
-     handleValueChange={setPlayerName}
-     />
-     <CustomButton
-     title="Join Game"
-     handleClick={handleClick}
-     restStyles="mt-6"
-     />
+      <CustomInput
+        label="Name"
+        placeHolder="Enter your player name"
+        value={playerName}
+        handleValueChange={setPlayerName}
+      />
+      <CustomButton
+        title="Join Game"
+        handleClick={handleClick}
+        restStyles="mt-6"
+      />
     </div>
   );
 };

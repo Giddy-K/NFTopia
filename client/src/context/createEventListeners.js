@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 
-import { ABI } from "../contract";
+import { ABI } from "../contract/index.js";
 
 const AddNewEvent = (eventFilter, provider, cb) => {
   provider.removeListener(eventFilter);
@@ -18,17 +18,32 @@ export const createEventListeners = ({
   provider,
   walletAddress,
   setShowAlert,
+  setUpdateGameData,
 }) => {
-  const NewPlayerEventFilter = contract.filters.NewPlayer();
 
+  // Event Listener for New Events
+  const NewPlayerEventFilter = contract.filters.NewPlayer();
   AddNewEvent(NewPlayerEventFilter, provider, ({ args }) => {
     console.log("New player created", args);
     if (walletAddress === args.owner) {
       setShowAlert({
         status: true,
         type: "success",
-        message: 'Congratulations! Your wallet address has been registered as a new player.',
+        message: 'Congratulations!',
       });
     }
   });
+
+  // Event Listener for New Battles
+  const NewBattleEventFilter = contract.filters.NewBattle();
+  AddNewEvent(NewBattleEventFilter, provider, ({ args }) => {
+    console.log('New battle started!', args, walletAddress);
+
+    if (walletAddress.toLowerCase() === args.player1.toLowerCase() || walletAddress.toLowerCase() === args.player2.toLowerCase()) {
+      navigate(`/battle/${args.battleName}`);
+    }
+
+    setUpdateGameData((prevUpdateGameData) => prevUpdateGameData + 1);
+  });
+
 };
