@@ -35,7 +35,7 @@ const OnboardModal = () => {
         return (
           <>
             <p className={styles.modalText}>
-              You don't have Core Wallet installed!
+              EH,EH,EH!!! I Wonder...You don't have Core Wallet installed!
             </p>
             <CustomButton
               title="Download Core"
@@ -48,7 +48,7 @@ const OnboardModal = () => {
         return (
           <>
             <p className={styles.modalText}>
-              You haven't connected your account to Core Wallet!
+             Alaaa! You haven't connected your account to Core Wallet!
             </p>
             <CustomButton
               title="Connect Account"
@@ -61,7 +61,7 @@ const OnboardModal = () => {
         return (
           <>
             <p className={styles.modalText}>
-              You're on a different network. Switch to Fuji C-Chain.
+              You're on a different network. Switch to WAGMI.
             </p>
             <CustomButton title="Switch" handleClick={SwitchNetwork} />
           </>
@@ -71,7 +71,7 @@ const OnboardModal = () => {
         return (
           <>
             <p className={styles.modalText}>
-              Oops, you don't have AVAX tokens in your account
+              Jamenii, you don't have WAGMI tokens in your account
             </p>
             <CustomButton
               title="Grab some test tokens"
@@ -81,7 +81,7 @@ const OnboardModal = () => {
         );
 
       default:
-        return <p className={styles.modalText}>Good to go!</p>;
+        return <p className={styles.modalText}>Aight, Ready to go!</p>;
     }
   };
 

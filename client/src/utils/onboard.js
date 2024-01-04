@@ -106,14 +106,14 @@ export async function SwitchNetwork() {
   await window?.ethereum?.request({
     method: 'wallet_addEthereumChain',
     params: [{
-      chainId: '0xA869',
-      chainName: 'Fuji C-Chain',
+      chainId: '0x2b67',
+      chainName: 'WAGMI Subnet',
       nativeCurrency: {
-        name: 'AVAX',
-        symbol: 'AVAX',
-        decimals: 18,
+        name: 'WAGMI',
+        symbol: 'WGM',
+        decimals: 9,
       },
-      rpcUrls: ['https://api.avax-test.network/ext/bc/C/rpc'],
+      rpcUrls: ['https://subnets.avax.network/wagmi/wagmi-chain-testnet/rpc'],
       blockExplorerUrls: ['https://testnet.snowtrace.io'],
     }],
   }).catch((error) => {

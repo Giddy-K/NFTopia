@@ -66,7 +66,7 @@ const styles = {
 
   // gameInfo component
   gameInfoIconBox: 'absolute right-2 top-1/2',
-  gameInfoIcon: 'bg-siteViolet w-10 h-10 rounded-md cursor-pointer',
+  gameInfoIcon: 'bg-yellow-500 w-10 h-10 rounded-md cursor-pointer',
   gameInfoIconImg: 'w-3/5 h-3/5 object-contain invert',
   gameInfoSidebar: 'absolute p-6 right-0 top-0 h-screen rounded-md flex-col transition-all ease-in duration-300',
   gameInfoSidebarCloseBox: 'flex justify-end mb-8',
@@ -75,6 +75,7 @@ const styles = {
   gameInfoText: 'font-rajdhani font-medium text-white text-xl mb-2',
 
   // common
+  flexTop: 'flex items-top justify-center',
   flexCenter: 'flex items-center justify-center',
   flexEnd: 'flex justify-end items-end',
   flexBetween: 'flex justify-between items-center',
