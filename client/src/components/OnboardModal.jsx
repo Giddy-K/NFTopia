@@ -61,7 +61,7 @@ const OnboardModal = () => {
         return (
           <>
             <p className={styles.modalText}>
-              You're on a different network. Switch to WAGMI.
+              Alaa!! You're on a different network. Switch to WAGMI.
             </p>
             <CustomButton title="Switch" handleClick={SwitchNetwork} />
           </>

@@ -9,7 +9,7 @@ import "./index.css";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <GlobalContextProvider>
-      {/* <OnboardModal /> */}
+      <OnboardModal />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/create-battle" element={<CreateBattle />} />

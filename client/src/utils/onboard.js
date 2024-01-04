@@ -77,7 +77,7 @@ export const GetParams = async () => {
 
   response.account = currentAccount;
 
-  if (getChainID() !== 43113) {
+  if (getChainID() !== 11111) {
     response.step = 2;
 
     return response;
@@ -106,15 +106,15 @@ export async function SwitchNetwork() {
   await window?.ethereum?.request({
     method: 'wallet_addEthereumChain',
     params: [{
-      chainId: '0x2b67',
-      chainName: 'WAGMI Subnet',
+      chainId: '11111',
+      chainName: 'WAGMI Subnet', 
       nativeCurrency: {
         name: 'WAGMI',
-        symbol: 'WGM',
-        decimals: 9,
+        symbol: 'WGM', 
+        decimals: 9, 
       },
       rpcUrls: ['https://subnets.avax.network/wagmi/wagmi-chain-testnet/rpc'],
-      blockExplorerUrls: ['https://testnet.snowtrace.io'],
+      blockExplorerUrls: ['https://subnets.avax.network/wagmi/wagmi-chain-testnet/explorer'],
     }],
   }).catch((error) => {
     console.log(error);
