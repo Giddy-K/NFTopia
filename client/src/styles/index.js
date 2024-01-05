@@ -9,6 +9,9 @@ const styles = {
   // glassmorphism
   glassEffect: 'bg-white backdrop-filter backdrop-blur-lg bg-opacity-10',
 
+  // page movement
+  scrollContainer: 'overflow-y-auto h-screen',
+  
   // hoc page
   hocContainer: 'min-h-screen md:mx-auto flex xl:flex-row flex-col relative',
   hocContentBox: 'flex flex-1 justify-between bg-siteblack py-8 sm:px-12 px-8 flex-col',

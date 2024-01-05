@@ -23,6 +23,7 @@ const Battleground = () => {
   };
 
   return (
+    <div className={styles.scrollContainer}>
     <div className={`${styles.flexCenter} ${styles.battlegroundContainer}`}>
       {showAlert.status && <Alert type={showAlert.type} message={showAlert.message} />}
 
@@ -47,6 +48,7 @@ const Battleground = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };
