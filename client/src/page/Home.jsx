@@ -22,7 +22,7 @@ const Home = () => {
           message: `${playerName} is being summoned!`,
         });
 
-        setTimeout(() => navigate('/create-battle'), 8000);
+        setTimeout(() => navigate('/game-mode'), 8000);
       }
     } catch (error) {
       setErrorMessage(error.message)
@@ -35,7 +35,7 @@ const Home = () => {
       const playerTokenExists = await contract.isPlayerToken(walletAddress);
       console.log({ playerExists, playerTokenExists });
       if (playerExists && playerTokenExists) {
-        navigate("/create-battle");
+        navigate("/game-mode");
       }
     };
     if (contract) checkForPlayerToken();

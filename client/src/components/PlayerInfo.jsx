@@ -35,7 +35,7 @@ const PlayerInfo = ({ player, playerIcon, mt }) => (
 
     <div
       data-for={`Mana-${mt ? "1" : "2"}`}
-      data-tip="Mana"
+      data-tip="Strength"
       className={`${styles.flexCenter} ${styles.glassEffect} ${styles.playerMana}`}
     >
       {player.mana || 0}

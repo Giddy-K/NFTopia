@@ -1,5 +1,6 @@
-import { ethers } from "ethers";
-import { ABI } from "../contract/index.js";
+import { ethers } from 'ethers';
+
+import { ABI } from '../contract';
 import { playAudio, sparcle } from '../utils/animation.js';
 import { defenseSound } from '../assets';
 
@@ -25,28 +26,29 @@ const getCoords = (cardRef) => {
 
 const emptyAccount = '0x0000000000000000000000000000000000000000';
 
-export const createEventListeners = ({
-  navigate,
-  contract,
-  provider,
-  walletAddress,
-  setShowAlert,
-  setUpdateGameData,
-  player1Ref,
-  player2Ref,
-}) => {
-
-  // Event Listener for New Events
+export const createEventListeners = ({ navigate, contract, provider, walletAddress, setShowAlert, player1Ref, player2Ref, setUpdateGameData }) => {
   const NewPlayerEventFilter = contract.filters.NewPlayer();
   AddNewEvent(NewPlayerEventFilter, provider, ({ args }) => {
-    console.log("New player created", args);
+    console.log('New player created!', args);
+
     if (walletAddress === args.owner) {
       setShowAlert({
         status: true,
-        type: "success",
-        message: 'Congratulations!',
+        type: 'success',
+        message: 'Player has been successfully registered',
       });
     }
+  });
+
+  const NewBattleEventFilter = contract.filters.NewBattle();
+  AddNewEvent(NewBattleEventFilter, provider, ({ args }) => {
+    console.log('New battle started!', args, walletAddress);
+
+    if (walletAddress.toLowerCase() === args.player1.toLowerCase() || walletAddress.toLowerCase() === args.player2.toLowerCase()) {
+      navigate(`/battle/${args.battleName}`);
+    }
+
+    setUpdateGameData((prevUpdateGameData) => prevUpdateGameData + 1);
   });
 
   const NewGameTokenEventFilter = contract.filters.NewGameToken();
@@ -64,19 +66,6 @@ export const createEventListeners = ({
     }
   });
 
-  // Event Listener for New Battles
-  const NewBattleEventFilter = contract.filters.NewBattle();
-  AddNewEvent(NewBattleEventFilter, provider, ({ args }) => {
-    console.log('New battle started!', args, walletAddress);
-
-    if (walletAddress.toLowerCase() === args.player1.toLowerCase() || walletAddress.toLowerCase() === args.player2.toLowerCase()) {
-      navigate(`/battle/${args.battleName}`);
-    }
-
-    setUpdateGameData((prevUpdateGameData) => prevUpdateGameData + 1);
-  });
-
-  // Event Listener for Battle Move
   const BattleMoveEventFilter = contract.filters.BattleMove();
   AddNewEvent(BattleMoveEventFilter, provider, ({ args }) => {
     console.log('Battle move initiated!', args);
@@ -101,16 +90,15 @@ export const createEventListeners = ({
     setUpdateGameData((prevUpdateGameData) => prevUpdateGameData + 1);
   });
 
-   // Battle Ended event listener
-   const BattleEndedEventFilter = contract.filters.BattleEnded();
-   AddNewEvent(BattleEndedEventFilter, provider, ({ args }) => {
-     if (walletAddress.toLowerCase() === args.winner.toLowerCase()) {
-       setShowAlert({ status: true, type: 'success', message: 'You won!' });
-     } else if (walletAddress.toLowerCase() === args.loser.toLowerCase()) {
-       setShowAlert({ status: true, type: 'failure', message: 'You lost!' });
-     }
- 
-     navigate('/create-battle');
-   });
+  // Battle Ended event listener
+  const BattleEndedEventFilter = contract.filters.BattleEnded();
+  AddNewEvent(BattleEndedEventFilter, provider, ({ args }) => {
+    if (walletAddress.toLowerCase() === args.winner.toLowerCase()) {
+      setShowAlert({ status: true, type: 'success', message: 'You won!' });
+    } else if (walletAddress.toLowerCase() === args.loser.toLowerCase()) {
+      setShowAlert({ status: true, type: 'failure', message: 'You lost!' });
+    }
 
+    navigate('/game-mode');
+  });
 };

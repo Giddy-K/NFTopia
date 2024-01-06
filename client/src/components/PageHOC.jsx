@@ -22,7 +22,6 @@ const PageHOC = (Component, title, description) => () => {
           className={styles.hocLogo}
           onClick={() => navigate("/")}
         />
-        {/* <p>2-HOOKS</p> */}
         <div className={styles.hocBodyWrapper}>
           <div className="flex flex-row w-full">
             <h1 className={`flex ${styles.headText} head-text`}>{title}</h1>
