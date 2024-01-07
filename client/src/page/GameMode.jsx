@@ -8,18 +8,11 @@ import { heroImg } from "../assets";
 
 const GameMode = () => {
     const { contract, walletAddress, setShowAlert, showAlert, setErrorMessage, gameData } = useGlobalContext();
-  const [player2, setPlayer2] = useState({});
-  const [player1, setPlayer1] = useState({});
-  const navigate = useNavigate();
-  console.log(player2?.playerName);
-  console.log(player2);
-  console.log({contract});
-  
 
   //Online multiplayer Mode
   const handleOnlineMultiplayer = () => {
     // Navigate to the Online Multiplayer screen
-    navigate("/online-multiplayer");
+    navigate("/create-battle");
   };
 
   //Single player mode
