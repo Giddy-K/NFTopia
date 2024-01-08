@@ -53,9 +53,9 @@ const OnboardModal = () => {
         return (
           <>
             <p className={styles.modalText}>
-              Now that you have core installed you need to create an account and
-              connect it to your core Wallet, do this by clicking the button
-              bellow.
+              Now that you have Core installed you need to create an Account and
+              connect it to your Core Wallet, do this by clicking the button
+              bellow and click Connect Wallet.
             </p>
             <CustomButton
               title="Connect Account"
@@ -68,7 +68,7 @@ const OnboardModal = () => {
         return (
           <>
             <p className={styles.modalText}>
-              You're on a different network.Please switch to WAGMI network by
+              You're on a different network. Please switch to WAGMI network by
               clicking the button below.
             </p>
             <CustomButton title="Switch" handleClick={SwitchNetwork} />
