@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
-import Modal from 'react-modal';
+import { useState, useEffect } from "react";
+import Modal from "react-modal";
 
-import styles from '../styles';
-import { CustomButton } from '.';
-import { useGlobalContext } from '../context';
-import { GetParams, SwitchNetwork } from '../utils/onboard.js';
+import styles from "../styles";
+import { CustomButton } from ".";
+import { useGlobalContext } from "../context";
+import { GetParams, SwitchNetwork } from "../utils/onboard.js";
 
 const OnboardModal = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -20,11 +20,11 @@ const OnboardModal = () => {
   useEffect(() => {
     resetParams();
 
-    window?.ethereum?.on('chainChanged', () => {
+    window?.ethereum?.on("chainChanged", () => {
       resetParams();
     });
 
-    window?.ethereum?.on('accountsChanged', () => {
+    window?.ethereum?.on("accountsChanged", () => {
       resetParams();
     });
   }, []);
@@ -35,11 +35,16 @@ const OnboardModal = () => {
         return (
           <>
             <p className={styles.modalText}>
-              EH,EH,EH!!! I Wonder...You don't have Core Wallet installed!
+              Hello there Gamer!! Thank You for taking your time to test this game out.
+              To proceed to the game you will need to have core wallet
+              installed, either as an extension on your browser or the actuall
+              app on your phone. Click the button bellow which will redirect you
+              to the core app download page and follow the instructions provided
+              to get started.
             </p>
             <CustomButton
               title="Download Core"
-              handleClick={() => window.open('https://core.app/', '_blank')}
+              handleClick={() => window.open("https://core.app/", "_blank")}
             />
           </>
         );
@@ -48,7 +53,9 @@ const OnboardModal = () => {
         return (
           <>
             <p className={styles.modalText}>
-             Alaaa! You haven't connected your account to Core Wallet!
+              Now that you have core installed you need to create an account and
+              connect it to your core Wallet, do this by clicking the button
+              bellow.
             </p>
             <CustomButton
               title="Connect Account"
@@ -61,7 +68,8 @@ const OnboardModal = () => {
         return (
           <>
             <p className={styles.modalText}>
-              Alaa!! You're on a different network. Switch to WAGMI.
+              You're on a different network.Please switch to WAGMI network by
+              clicking the button below.
             </p>
             <CustomButton title="Switch" handleClick={SwitchNetwork} />
           </>
@@ -71,11 +79,16 @@ const OnboardModal = () => {
         return (
           <>
             <p className={styles.modalText}>
-              Jamenii, you don't have WAGMI tokens in your account
+              Unfortunately you don't have WAGMI tokens in your account to
+              proceed to the game. You can get some test tokens by clicking the
+              button bellow and request to get WAGMI test tokens by selecting
+              WAGMI from the drop down.
             </p>
             <CustomButton
               title="Grab some test tokens"
-              handleClick={() => window.open('https://faucet.avax.network/', '_blank')}
+              handleClick={() =>
+                window.open("https://faucet.avax.network/", "_blank")
+              }
             />
           </>
         );
