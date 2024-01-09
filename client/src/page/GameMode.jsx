@@ -8,6 +8,8 @@ import { heroImg } from "../assets";
 
 const GameMode = () => {
     const { contract, walletAddress, setShowAlert, showAlert, setErrorMessage, gameData } = useGlobalContext();
+    const navigate = useNavigate();
+
 
   //Online multiplayer Mode
   const handleOnlineMultiplayer = () => {
@@ -32,16 +34,17 @@ const GameMode = () => {
       </div>
     <div className={styles.hocContentBox}>
     <div className="flex flex-col items-center mt-10">
-          <CustomButton
-            title="Online Multiplayer"
-            handleClick={handleOnlineMultiplayer}
-          />
-          <CustomButton
-            title="Level Up Quests"
-            handleClick={handleLevelUpQuests}
-            restStyles="mt-4"
-          />
-        </div>  
+      <div className={styles.image-container}>
+        <img src="" alt="Online Game" className={styles.image} />
+      </div>
+      <CustomButton title="Online Multiplayer" handleClick={handleOnlineMultiplayer} />
+    </div>
+    <div className="flex flex-col items-center mt-6">
+      <div className="image-container">
+        <img src="" alt="Level Up" className={styles.image} />
+      </div>
+      <CustomButton title="Level Up Quests" handleClick={handleLevelUpQuests} restStyles="mt-4" />
+    </div> 
       <p className={styles.footerText}>
     Copyright © 2024 All rights reserved{' '}
     <a href="https://x.com/Giddy_KK?t=_oopVrOZu77tBxxwxy0-Tw&s=09" target="_blank" rel="noopener noreferrer" className={styles.linkBlue} >
