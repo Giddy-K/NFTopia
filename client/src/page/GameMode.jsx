@@ -7,9 +7,15 @@ import { CustomButton, Alert, CustomInput } from "../components";
 import { heroImg } from "../assets";
 
 const GameMode = () => {
-    const { contract, walletAddress, setShowAlert, showAlert, setErrorMessage, gameData } = useGlobalContext();
-    const navigate = useNavigate();
-
+  const {
+    contract,
+    walletAddress,
+    setShowAlert,
+    showAlert,
+    setErrorMessage,
+    gameData,
+  } = useGlobalContext();
+  const navigate = useNavigate();
 
   //Online multiplayer Mode
   const handleOnlineMultiplayer = () => {
@@ -24,42 +30,61 @@ const GameMode = () => {
   };
 
   return (
+    <div className={styles.scrollContainer}>
     <div className={styles.hocContainer}>
-    {showAlert?.status && (
-      <Alert type={showAlert.type} message={showAlert.message} />
-    )}
-    <div className="absolute top-0 left-0 p-4">
-        <p className="text-white">Test</p>
-        <p className="text-white">{walletAddress}</p>
+      {showAlert?.status && (
+        <Alert type={showAlert.type} message={showAlert.message} />
+      )}
+      <div className="absolute top-0 left-0 p-4">
+        <p className={styles.normalText}>Test</p>
+        <p className={styles.normalText}>{walletAddress}</p>
       </div>
-    <div className={styles.hocContentBox}>
-    <div className="flex flex-col items-center mt-10">
-      <div className={styles.image-container}>
-        <img src="" alt="Online Game" className={styles.image} />
+      
+      <div className={`${styles.hocContentBox} ${styles.flexCol}`}>
+        {/* Online Multiplayer */}
+        <div className={`${styles.flexCol} items-center mt-10`}>
+          <div className={styles.imageContainer}>
+            <img src={heroImg} alt="Online Game" className={styles.image} />
+          </div>
+          <CustomButton
+            title="Online Multiplayer"
+            handleClick={handleOnlineMultiplayer}
+          />
+        </div>
+        {/* Level Up Quests */}
+        <div className={`${styles.flexCol} items-center mt-6`}>
+          <div className={styles.imageContainer}>
+            <img src={heroImg} alt="Level Up" className={styles.image} />
+          </div>
+          <CustomButton
+            title="Level Up Quests"
+            handleClick={handleLevelUpQuests}
+            restStyles="mt-4"
+          />
+        </div>
+        {/* Footer Text */}
+        <p className={styles.footerText}>
+          Copyright © 2024 All rights reserved{" "}
+          <a
+            href="https://x.com/Giddy_KK?t=_oopVrOZu77tBxxwxy0-Tw&s=09"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.linkBlue}
+          >
+            @codewithgiddy🪐
+          </a>
+        </p>
       </div>
-      <CustomButton title="Online Multiplayer" handleClick={handleOnlineMultiplayer} />
-    </div>
-    <div className="flex flex-col items-center mt-6">
-      <div className="image-container">
-        <img src="" alt="Level Up" className={styles.image} />
       </div>
-      <CustomButton title="Level Up Quests" handleClick={handleLevelUpQuests} restStyles="mt-4" />
-    </div> 
-      <p className={styles.footerText}>
-    Copyright © 2024 All rights reserved{' '}
-    <a href="https://x.com/Giddy_KK?t=_oopVrOZu77tBxxwxy0-Tw&s=09" target="_blank" rel="noopener noreferrer" className={styles.linkBlue} >
-      @codewithgiddy🪐
-    </a>
-  </p>
+      {/* Hero Image */}
+      {/* <div className="flex flex-1">
+        <img
+          src={heroImg}
+          alt="hero-img"
+          className="w-full xl:h-full object-cover "
+        />
+      </div> */}
     </div>
-    <div className="flex flex-1">
-      <img
-        src={heroImg}
-        alt="hero-img"
-        className="w-full xl:h-full object-cover "
-      />
-    </div>
-  </div>
   );
 };
 

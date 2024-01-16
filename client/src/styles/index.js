@@ -1,4 +1,13 @@
 const styles = {
+
+  // Media query for responsiveness
+  '@media screen and (min-width: 768px)': {
+    flexRow: 'flex-row justify-center',
+
+    // Adjust spacing between elements
+    flexRowItems: 'm-0 sm:m-10', // Adjust classes as needed
+  },
+
   // general
   headText: 'font-rajdhani font-bold text-white sm:text-6xl text-4xl',
   normalText: 'font-rajdhani font-normal text-[24px] text-siteWhite',
@@ -30,6 +39,14 @@ const styles = {
   battleGroundCard: 'sm:w-[420px] w-full h-[260px] p-2 glass-morphism m-4 rounded-lg cursor-pointer battle-card',
   battleGroundCardImg: 'w-full h-full object-cover rounded-md',
   battleGroundCardText: 'font-rajdhani font-semibold text-2xl text-white',
+
+  // Game mode
+  image: 'w-full h-full object-cover rounded-8',
+  flexCol: 'flex flex-col items-center',
+  imageContainer: 'w-100 h-100 mb-10',
+  flexRow: 'flex flex-row justify-center',
+
+  
 
   // Game page
   gameContainer: 'w-screen min-h-screen bg-cover bg-no-repeat bg-center flex-col',
