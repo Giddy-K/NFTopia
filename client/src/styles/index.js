@@ -42,11 +42,12 @@ const styles = {
 
   // Game mode
   image: 'w-full h-full object-cover rounded-8',
+  levelUpImage: 'w-full h-full object-cover rounded-8 w-[728px] h-[410px]',
   flexCol: 'flex flex-col items-center',
-  imageContainer: 'w-100 h-100 mb-10',
-  flexRow: 'flex flex-row justify-center',
-
-  
+  imageContainer: 'mt-15 w-100 h-100 mb-10',
+  flexRow: 'flex flex-row justify-evenly',
+  contentBox: 'flex flex-1 justify-evenly bg-siteblack py-8 sm:px-12 px-8',
+  footerBox: 'bg-siteblack',
 
   // Game page
   gameContainer: 'w-screen min-h-screen bg-cover bg-no-repeat bg-center flex-col',

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "../styles";
 import { useGlobalContext } from "../context";
 import { CustomButton, Alert, CustomInput } from "../components";
-import { heroImg } from "../assets";
+import { levelUp, online } from "../assets";
 
 const GameMode = () => {
   const {
@@ -26,12 +26,12 @@ const GameMode = () => {
   //Single player mode
   const handleLevelUpQuests = () => {
     // Navigate to the Level Up Quests screen
-    navigate("/level-up-quests");
+    navigate("/level-up");
   };
 
   return (
-    <div className={styles.scrollContainer}>
-    <div className={styles.hocContainer}>
+    <div className={`${styles.scrollContainer} h-full w-full`}>
+    <div className={`${styles.flexCol} h-full w-full`}>
       {showAlert?.status && (
         <Alert type={showAlert.type} message={showAlert.message} />
       )}
@@ -40,21 +40,22 @@ const GameMode = () => {
         <p className={styles.normalText}>{walletAddress}</p>
       </div>
       
-      <div className={`${styles.hocContentBox} ${styles.flexCol}`}>
+      <div className={`${styles.contentBox} ${styles.flexRow} h-full w-full`}>
         {/* Online Multiplayer */}
-        <div className={`${styles.flexCol} items-center mt-10`}>
-          <div className={styles.imageContainer}>
-            <img src={heroImg} alt="Online Game" className={styles.image} />
+        <div className={`${styles.flexCol} items-center mt-20`}>
+          <div className={`${styles.imageContainer} mt-10`}>
+            <img src={online} alt="Online Game" className={styles.image} />
           </div>
           <CustomButton
             title="Online Multiplayer"
             handleClick={handleOnlineMultiplayer}
+            restStyles="mt-4"
           />
         </div>
         {/* Level Up Quests */}
-        <div className={`${styles.flexCol} items-center mt-6`}>
-          <div className={styles.imageContainer}>
-            <img src={heroImg} alt="Level Up" className={styles.image} />
+        <div className={`${styles.flexCol} items-center mt-20`}>
+          <div className={`${styles.imageContainer} mt-10`}>
+            <img src={levelUp} alt="Level Up" className={styles.levelUpImage} />
           </div>
           <CustomButton
             title="Level Up Quests"
@@ -62,8 +63,11 @@ const GameMode = () => {
             restStyles="mt-4"
           />
         </div>
-        {/* Footer Text */}
-        <p className={styles.footerText}>
+        
+        
+      </div>
+      {/* Footer Text */}
+      <p className={`${styles.footerBox} ${styles.footerText} w-full`}>
           Copyright © 2024 All rights reserved{" "}
           <a
             href="https://x.com/Giddy_KK?t=_oopVrOZu77tBxxwxy0-Tw&s=09"
@@ -74,7 +78,6 @@ const GameMode = () => {
             @codewithgiddy🪐
           </a>
         </p>
-      </div>
       </div>
       {/* Hero Image */}
       {/* <div className="flex flex-1">

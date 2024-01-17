@@ -11,6 +11,8 @@ import astral from "./background/astral.jpg";
 import eoaalien from "./background/eoaalien.jpg";
 import panight from "./background/panight.jpg";
 import heroImg from "./background/abstract-realistic-technology-particle-background_52683-33064.avif";
+import online from "./Online.jpg";
+import levelUp from "./LevelUp.jpeg";
 
 // cards
 import ace from "./Ace.png";
@@ -150,6 +152,8 @@ export {
   eoaalien,
   panight,
   heroImg,
+  online,
+  levelUp,
   ace,
   bakezori,
   blackSolus,

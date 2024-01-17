@@ -4,6 +4,7 @@ import JoinBattle from "./JoinBattle";
 import Battle from "./Battle";
 import BattleGround from "./BattleGround";
 import GameMode from "./GameMode";
+import LevelUp from "./LevelUp";
 
 
 
@@ -14,4 +15,5 @@ export {
     Battle,
     BattleGround,
     GameMode,
+    LevelUp,
 };
