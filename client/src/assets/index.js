@@ -13,6 +13,7 @@ import panight from "./background/panight.jpg";
 import heroImg from "./background/abstract-realistic-technology-particle-background_52683-33064.avif";
 import online from "./Online.jpg";
 import levelUp from "./LevelUp.jpeg";
+import liveBackground from "./background/VideoBG.mp4";
 
 // cards
 import ace from "./Ace.png";
@@ -194,6 +195,7 @@ export {
   attackSound,
   defenseSound,
   explosion,
+  liveBackground,
 };
 
 export const battlegrounds = [
@@ -213,8 +215,12 @@ export const battlegrounds = [
 export const gameRules = [
   "Card with the same defense and attack point will cancel each other out.",
   "Attack points from the attacking card will deduct the opposing player’s health points.",
-  "If P1 does not defend, their health wil be deducted by P2’s attack.",
-  "If P1 defends, P2’s attack is equal to P2’s attack - P1’s defense.",
-  "If a player defends, they refill 3 Mana",
-  "If a player attacks, they spend 3 Mana",
+  "If Player1 does not defend, their health wil reduce by Player2’s attack points.",
+  "If P1 defends, Player2’s attack will be equal to Player2’s attack minus Player1’s defense.",
+  "If a player defends, they refill their Energy by 3 points",
+  "If a player attacks, they spend their Energy by 3 points",
+  "************************************************************",
+  "More rules will be added soon for clarity, as the game is being developed",
+  "If you have any issue, please contact the developer by clicking on the \n twitter handle provide at the bottom of the mode sreen after the Copyright message",
+  "Thank You!"
 ];

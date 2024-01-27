@@ -20,6 +20,7 @@ export const GlobalContextProvider = ({ children }) => {
     const storedAddress = localStorage.getItem("walletAddress");
     return storedAddress || "";
   });
+  // const [playerName, setPlayerName] = useState("");
   const [contract, setContract] = useState("");
   const [provider, setProvider] = useState("");
   const [showAlert, setShowAlert] = useState({

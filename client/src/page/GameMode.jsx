@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 import styles from "../styles";
 import { useGlobalContext } from "../context";
-import { CustomButton, Alert } from "../components";
-import { levelUp, online } from "../assets";
+import { CustomButton, GameInfo, Alert } from "../components";
+import { levelUp, online, liveBackground } from "../assets";
 
 const GameMode = () => {
   const {
@@ -16,7 +16,29 @@ const GameMode = () => {
     gameData,
   } = useGlobalContext();
   const navigate = useNavigate();
+  const [playerName, setPlayerName] = useState("");
 
+  useEffect(() => {
+    const fetchPlayerName = async () => {
+      try {
+        // Assuming the getPlayer method returns the player's name
+        const player = await contract.getPlayer(walletAddress);
+
+        // Extracting the player's name from the contract response
+        const playerName = player.playerName;
+
+        // Set the playerName in the component's state
+        setPlayerName(playerName);
+      } catch (error) {
+        setErrorMessage(error.message);
+      }
+    };
+
+    if (contract && walletAddress) {
+      fetchPlayerName();
+    }
+  }, [contract, walletAddress, setErrorMessage]);
+       
   //Online multiplayer Mode
   const handleOnlineMultiplayer = () => {
     // Navigate to the Online Multiplayer screen
@@ -30,21 +52,43 @@ const GameMode = () => {
   };
 
   return (
+    <div style={{
+      position: 'relative',
+      width: '100%',
+      height: '100vh',
+      overflow: 'hidden',
+    }}>
+      <video
+        autoPlay
+        muted
+        loop
+        style={{
+          objectFit: 'cover',
+          width: '100%',
+          height: '100%',
+          position: 'absolute',
+          zIndex: '-1',
+        }}
+      >
+        <source src={liveBackground} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     <div className={`${styles.scrollContainer} h-full w-full`}>
     <div className={`${styles.flexCol} h-full w-full`}>
       {showAlert?.status && (
         <Alert type={showAlert.type} message={showAlert.message} />
       )}
-      <div className="absolute top-0 left-0 p-4">
-        <p className={`flex ${styles.gameModeHT} head-text`}>Test</p>
-        <p className={`flex ${styles.gameModeHT} head-text`}>{walletAddress}</p>
+      <div className={`absolute top-10 left-0 p-4 ${styles.glowBorder.base} ${styles.glowBorder.colors.default} ${styles.glowBorder.active}`}>
+        <p className={`flex ${styles.gameModeHT}`}>{playerName && `Player Name: ${playerName}`}</p>
+        
+        <p className={`flex ${styles.gameModeHT}`}>{walletAddress}</p>
       </div>
       
       <div className={`${styles.contentBox} ${styles.flexRow} h-full w-full`}>
         {/* Online Multiplayer */}
-        <div className={`${styles.flexCol} items-center mt-20`}>
+        <div className={`${styles.flexCol} items-center flex justify-center`}>
           <div className={`${styles.imageContainer} mt-10`}>
-            <img src={online} alt="Online Game" className={styles.image} />
+            <img src="" alt="Online Game" className={styles.image} />
           </div>
           <CustomButton
             title="Online Multiplayer"
@@ -53,9 +97,9 @@ const GameMode = () => {
           />
         </div>
         {/* Level Up Quests */}
-        <div className={`${styles.flexCol} items-center mt-20`}>
+        <div className={`${styles.flexCol} items-center flex justify-center`}>
           <div className={`${styles.imageContainer} mt-10`}>
-            <img src={levelUp} alt="Level Up" className={styles.levelUpImage} />
+            <img src="" alt="Level Up" className={styles.levelUpImage} />
           </div>
           <CustomButton
             title="Level Up Quests"
@@ -78,6 +122,7 @@ const GameMode = () => {
             @codewithgiddy🪐
           </a>
         </p>
+        <GameInfo />
       </div>
       {/* Hero Image */}
       {/* <div className="flex flex-1">
@@ -87,6 +132,7 @@ const GameMode = () => {
           className="w-full xl:h-full object-cover "
         />
       </div> */}
+    </div>
     </div>
   );
 };

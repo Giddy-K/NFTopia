@@ -1,15 +1,26 @@
+import { liveBackground } from './src/assets';
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
+      boxShadow: {
+        glow: '0 0 10px rgba(0, 0, 255, 0.5)', // Adjust color and size as needed
+      },
       colors: {
         siteblack: '#131519',
         siteDimBlack: '#191d23',
         siteViolet: '#7f46f0',
         siteWhite: '#9eacc7',
+        siteBlue: '#1248B3',
+        sitePeach: '#6FDCEB',
+        siteRed: '#FBFF00',
+        sitePeach: '#FFE5B4',
+        siteTransparent: '#FFE5B400',
       },
       backgroundImage: {
+        liveBackground: "url('/src/assets/background/aurora_Domain.jpg')",
         auroraDomain: "url('/src/assets/background/aurora_Domain.jpg')",
         celestialCrossroads: "url('/src/assets/background/celestial_Crossroads.jpg')",
         chronoSpires: "url('/src/assets/background/chrono_Spires.jpg')",

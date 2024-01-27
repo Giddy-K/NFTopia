@@ -10,7 +10,7 @@ const styles = {
 
   // general
   headText: 'font-rajdhani font-bold text-white sm:text-6xl text-4xl',
-  gameModeHT: 'font-rajdhani font-bold text-white sm:text-6xl text-0.5xl',
+  gameModeHT: 'font-rajdhani font-bold text-siteblack sm:text-3xl text-sm',
   normalText: 'font-rajdhani font-normal text-[24px] text-siteWhite',
   footerText: 'font-rajdhani font-medium text-base text-white',
   infoText: 'font-rajdhani font-medium text-lg text-siteViolet cursor-pointer',
@@ -18,6 +18,16 @@ const styles = {
 
   // glassmorphism
   glassEffect: 'bg-white backdrop-filter backdrop-blur-lg bg-opacity-10',
+
+  //glow-border
+  glowBorder: {
+    base: 'border-2 rounded-full transition-all duration-300',
+    active: 'hover:shadow-glow',
+    colors: {
+      default: 'border-siteBlue',
+      glow: 'border-siteRed',
+    },
+  },
 
   // page movement
   scrollContainer: 'overflow-y-auto h-screen',
@@ -47,8 +57,8 @@ const styles = {
   flexCol: 'flex flex-col items-center',
   imageContainer: 'mt-15 w-100 h-100 mb-10',
   flexRow: 'flex flex-row justify-evenly',
-  contentBox: 'flex flex-1 justify-evenly bg-siteblack py-8 sm:px-12 px-8',
-  footerBox: 'bg-siteblack',
+  contentBox: 'flex flex-1 justify-evenly py-8 sm:px-12 px-8',
+  footerBox: 'bg-siteTransparent',
 
   // Game page
   gameContainer: 'w-screen min-h-screen bg-cover bg-no-repeat bg-center flex-col',

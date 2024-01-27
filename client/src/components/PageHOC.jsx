@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import { useGlobalContext } from "../context";
-import { logo, heroImg } from "../assets";
+import { logo, liveBackground } from "../assets";
 import styles from "../styles";
 import Alert from "./Alert";
 
@@ -36,12 +36,22 @@ const PageHOC = (Component, title, description) => () => {
       </a>
     </p>
       </div>
-      <div className="flex flex-1">
-        <img
-          src={heroImg}
-          alt="hero-img"
-          className="w-full xl:h-full object-cover "
-        />
+      <div className="flex flex-1 relative overflow-hidden">
+      <video
+        autoPlay
+        muted
+        loop
+        style={{
+          objectFit: 'cover',
+          width: '100%',
+          height: '100%',
+          position: 'absolute',
+          zIndex: '-1',
+        }}
+      >
+        <source src={liveBackground} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       </div>
     </div>
   );
