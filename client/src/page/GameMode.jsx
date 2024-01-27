@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import styles from "../styles";
 import { useGlobalContext } from "../context";
-import { CustomButton, Alert, CustomInput } from "../components";
+import { CustomButton, Alert } from "../components";
 import { levelUp, online } from "../assets";
 
 const GameMode = () => {
@@ -36,8 +36,8 @@ const GameMode = () => {
         <Alert type={showAlert.type} message={showAlert.message} />
       )}
       <div className="absolute top-0 left-0 p-4">
-        <p className={styles.normalText}>Test</p>
-        <p className={styles.normalText}>{walletAddress}</p>
+        <p className={`flex ${styles.gameModeHT} head-text`}>Test</p>
+        <p className={`flex ${styles.gameModeHT} head-text`}>{walletAddress}</p>
       </div>
       
       <div className={`${styles.contentBox} ${styles.flexRow} h-full w-full`}>

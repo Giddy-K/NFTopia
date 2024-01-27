@@ -69,5 +69,5 @@ export default PageHOC(
   <>
     Welcome to NFTopia Realm of Cards <br /> a Web3 NFT Card Game.
   </>,
-  <>Connect your wallet to begin your journey.</>
+  <>Connect your Core wallet to begin your journey.</>
 );
