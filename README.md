@@ -1,7 +1,8 @@
 # Welcome to NFTopia: Realm of Cards! 🃏✨
 
 **Welcome, Traveler!** 🌟 Welcome to NFTopia, the ultimate realm where NFTs and card gaming intertwine, creating a magical world of strategic battles and collectible treasures.
-### What is NFTopia
+
+## What is NFTopia
 
 🌌 **Immersive World:** Step into a mesmerizing universe where each card holds untold power and rarity as an NFT.
 
