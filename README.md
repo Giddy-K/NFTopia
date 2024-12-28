@@ -26,6 +26,7 @@
 🌟 **Start Exploring:** Clone this repository, immerse yourself in the code, and embark on your adventure in NFTopia! Contributions and feedback are warmly welcomed.
 
 ---
+
 ### Enter the Realm! 🌌⚔️
 
 Discover a world where NFTs ignite thrilling card battles and unlock boundless possibilities! Welcome to NFTopia: Realm of Cards - where legends are forged, treasures await, and your adventure begins! Let the quest unfold! 🏰🌟
