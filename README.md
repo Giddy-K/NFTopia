@@ -21,7 +21,7 @@
 
 🤝 **Community Hub:** Join our vibrant Discord/Telegram community! Share tactics, forge alliances, and shape the destiny of NFTopia together.
 
-### Begin Your Quest:
+### Begin Your Quest
 
 🌟 **Start Exploring:** Clone this repository, immerse yourself in the code, and embark on your adventure in NFTopia! Contributions and feedback are warmly welcomed.
 
