@@ -15,7 +15,7 @@
 
 🚀 **Innovation Unleashed:** Explore the groundbreaking fusion of NFTs and gaming, crafting an interactive world of collectible adventures.
 
-### Journey Ahead:
+### Journey Ahead
 
 🛡️ **Future Ventures:** Brace yourself for thrilling updates! New card releases, exciting tournaments, and community-driven features await.
 
