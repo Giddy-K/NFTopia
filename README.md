@@ -9,7 +9,7 @@
 
 🏆 **Collectible Quest:** Explore, discover, and collect exclusive NFT cards, building an awe-inspiring collection of powerful artifacts.
 
-### The Magic Within:
+### The Magic Within
 
 🔗 **Blockchain Fusion:** Your cards are securely owned on the Ethereum blockchain, making them truly YOURS to trade, collect, and wield in battle.
 
