@@ -1,7 +1,6 @@
 # Welcome to NFTopia: Realm of Cards! 🃏✨
 
 **Welcome, Traveler!** 🌟 Welcome to NFTopia, the ultimate realm where NFTs and card gaming intertwine, creating a magical world of strategic battles and collectible treasures.
-
 ### What is NFTopia?
 
 🌌 **Immersive World:** Step into a mesmerizing universe where each card holds untold power and rarity as an NFT.
@@ -27,7 +26,6 @@
 🌟 **Start Exploring:** Clone this repository, immerse yourself in the code, and embark on your adventure in NFTopia! Contributions and feedback are warmly welcomed.
 
 ---
-
 ### Enter the Realm! 🌌⚔️
 
 Discover a world where NFTs ignite thrilling card battles and unlock boundless possibilities! Welcome to NFTopia: Realm of Cards - where legends are forged, treasures await, and your adventure begins! Let the quest unfold! 🏰🌟
