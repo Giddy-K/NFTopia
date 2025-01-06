@@ -32,5 +32,4 @@
 
 Discover a world where NFTs ignite thrilling card battles and unlock boundless possibilities! Welcome to NFTopia: Realm of Cards - where legends are forged, treasures await, and your adventure begins! Let the quest unfold! 🏰🌟
 
-05
 06
