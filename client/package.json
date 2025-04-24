@@ -16,7 +16,7 @@
     "react-dom": "^18.2.0",
     "react-modal": "^3.15.1",
     "react-parallax-tilt": "^1.7.67",
-    "react-router-dom": "^6.3.0",
+    "react-router-dom": "^7.5.2",
     "react-tooltip": "^4.2.21",
     "web3modal": "^1.9.9"
   },
